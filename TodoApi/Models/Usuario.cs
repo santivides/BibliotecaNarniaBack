@@ -14,6 +14,6 @@ namespace TodoApi.Models
         public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
         public string Contrasena { get; set; }
-        public bool EsAdministrador { get; set; }
+        public bool Empleado { get; set; }
     }
 }
