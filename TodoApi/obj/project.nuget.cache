@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "IKdDDuqqsL0=",
+  "dgSpecHash": "wZUjxYM6++0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Santiago Vides\\Documents\\universidad\\10mo-semestre\\Arquitectura\\presentacion1\\BibliotecaNarniaBack\\BibliotecaNarniaBack\\TodoApi\\TodoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\corewcf.http\\1.6.0\\corewcf.http.1.6.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\corewcf.primitives\\1.6.0\\corewcf.primitives.1.6.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\corewcf.webhttp\\1.6.0\\corewcf.webhttp.1.6.0.nupkg.sha512",
@@ -72,6 +73,7 @@
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.7.1\\swashbuckle.aspnetcore.swagger.6.7.1.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
@@ -81,6 +83,7 @@
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.directoryservices\\6.0.1\\system.directoryservices.6.0.1.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.directoryservices.protocols\\6.0.2\\system.directoryservices.protocols.6.0.2.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
@@ -124,7 +127,14 @@
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.web.services.description\\6.2.0\\system.web.services.description.6.2.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit\\2.9.0\\xunit.2.9.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit.analyzers\\1.15.0\\xunit.analyzers.1.15.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit.assert\\2.9.0\\xunit.assert.2.9.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit.core\\2.9.0\\xunit.core.2.9.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit.extensibility.core\\2.9.0\\xunit.extensibility.core.2.9.0.nupkg.sha512",
+    "C:\\Users\\Santiago Vides\\.nuget\\packages\\xunit.extensibility.execution\\2.9.0\\xunit.extensibility.execution.2.9.0.nupkg.sha512"
   ],
   "logs": []
 }
