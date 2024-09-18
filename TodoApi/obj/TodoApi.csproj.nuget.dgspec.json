@@ -46,11 +46,19 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "CoreWCF.Http": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "CoreWCF.WebHttp": {
               "target": "Package",
               "version": "[1.6.0, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.8, )"
             },

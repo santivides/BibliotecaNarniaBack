@@ -1,4 +1,18 @@
+using CoreWCF;
+using CoreWCF.Configuration;
+using Microsoft.AspNetCore.Hosting;
+using TodoApi.Services;
+using TuNombreEspacio.Data;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configurar WCF en el proyecto
+builder.Services.AddServiceModelServices();
+
+builder.Services.AddDbContext<BibliotecaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 
@@ -16,6 +30,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Configuración del servicio WCF
+app.UseServiceModel(builder =>
+{
+    builder.AddService<LibroService>();
+    builder.AddServiceEndpoint<LibroService, ILibroService>(new BasicHttpBinding(), "/LibrosService");
+});
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -23,3 +45,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
