@@ -1,13 +1,21 @@
+using CoreWCF;
 using TodoApi.Models;
-using TodoApi.Repositories;
 
 namespace TodoApi.Interfaces
 {
-        public interface IUsuarioService
+    [ServiceContract] // Esto es necesario para CoreWCF
+    public interface IUsuarioService
     {
-        Task<Usuario> ObtenerUsuarioPorNumeroDocumento(string numeroDocumento);
-        Task<Usuario> ObtenerUsuarioPorCorreo(string correo);
+        [OperationContract]
+        Task<Usuario?> ObtenerUsuarioPorNumeroDocumento(string numeroDocumento);
+
+        [OperationContract]
+        Task<Usuario?> ObtenerUsuarioPorCorreo(string correo);
+
+        [OperationContract]
         Task<IEnumerable<Usuario>> ObtenerTodosUsuarios();
+
+        [OperationContract]
         Task RegistrarUsuario(Usuario usuario);
     }
 }

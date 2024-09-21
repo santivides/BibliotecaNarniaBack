@@ -1,41 +1,66 @@
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using TodoApi.Interfaces;
 using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
-    public class UsuarioController : IUsuarioService {
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UsuarioController : ControllerBase
+    {
         private readonly IUsuarioService _usuarioService;
 
-        public UsuarioController(IUsuarioService usuarioService) {
+        public UsuarioController(IUsuarioService usuarioService)
+        {
             _usuarioService = usuarioService;
         }
 
-        public async Task<Usuario> ObtenerUsuarioPorNumeroDocumento(string numeroDocumento) {
-            return await _usuarioService.ObtenerUsuarioPorNumeroDocumento(numeroDocumento);
+        // GET: api/Usuario/documento/{numeroDocumento}
+        [HttpGet("documento/{numeroDocumento}")]
+        public async Task<IActionResult> ObtenerUsuarioPorNumeroDocumento(string numeroDocumento)
+        {
+            var usuario = await _usuarioService.ObtenerUsuarioPorNumeroDocumento(numeroDocumento);
+            if (usuario == null)
+            {
+                return NotFound($"Usuario con número de documento {numeroDocumento} no encontrado.");
+            }
+            return Ok(usuario);
         }
 
-        public async Task<Usuario> ObtenerUsuarioPorCorreo(string correo) {
-            return await _usuarioService.ObtenerUsuarioPorCorreo(correo);  // Lógica para obtener por correo
+        [HttpGet("correo/{correo}")]
+        public async Task<IActionResult> ObtenerUsuarioPorCorreo(string correo)
+        {
+            var usuario = await _usuarioService.ObtenerUsuarioPorCorreo(correo);
+            if (usuario == null)
+            {
+                return NotFound($"Usuario con correo {correo} no encontrado.");
+            }
+            return Ok(usuario);
         }
 
-        public async Task<string> RegistrarUsuario(Usuario usuario) {
+
+        // POST: api/Usuario
+        [HttpPost]
+        public async Task<IActionResult> RegistrarUsuario([FromBody] Usuario usuario)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             await _usuarioService.RegistrarUsuario(usuario);
-            return "Usuario registrado exitosamente";
+            return Ok("Usuario registrado exitosamente");
         }
 
-        public Task<IEnumerable<Usuario>> ObtenerTodosUsuarios()
+        // GET: api/Usuario
+        [HttpGet]
+        public async Task<IActionResult> ObtenerTodosUsuarios()
         {
-            throw new NotImplementedException();
-        }
-
-        Task IUsuarioService.RegistrarUsuario(Usuario usuario)
-        {
-            throw new NotImplementedException();
+            var usuarios = await _usuarioService.ObtenerTodosUsuarios();
+            return Ok(usuarios);
         }
     }
-
 }

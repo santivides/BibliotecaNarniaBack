@@ -40,11 +40,14 @@ if (app.Environment.IsDevelopment())
 }
 
 // Configuración del servicio WCF
-app.UseServiceModel(builder => {
+app.UseServiceModel(builder =>
+{
+    // Cambia WSHttpBinding a BasicHttpBinding
     builder.AddService<UsuarioService>();
     builder.AddServiceEndpoint<UsuarioService, IUsuarioService>(
         new BasicHttpBinding(), "/UsuarioService");
 });
+
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
