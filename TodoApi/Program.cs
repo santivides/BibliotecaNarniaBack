@@ -1,29 +1,38 @@
 using CoreWCF;
 using CoreWCF.Configuration;
 using Microsoft.AspNetCore.Hosting;
-using TodoApi.Services;
-using TuNombreEspacio.Data;
 using Microsoft.EntityFrameworkCore;
-
+using TodoApi.Services;
+using TodoApi.Models;
+using TodoApi.Repositories;
+using TodoApi.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configurar WCF en el proyecto
 builder.Services.AddServiceModelServices();
 
-builder.Services.AddDbContext<BibliotecaContext>(options =>
+// Configuración de la base de datos
+builder.Services.AddDbContext<TodoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add services to the container.
+// Registrar servicios y repositorios
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
+// Configurar CoreWCF para servicios SOAP
+builder.Services.AddServiceModelServices();
+
+// Agregar controladores
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configuración de Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuración del middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -31,19 +40,14 @@ if (app.Environment.IsDevelopment())
 }
 
 // Configuración del servicio WCF
-app.UseServiceModel(builder =>
-{
-    builder.AddService<LibroService>();
-    builder.AddServiceEndpoint<LibroService, ILibroService>(new BasicHttpBinding(), "/LibrosService");
+app.UseServiceModel(builder => {
+    builder.AddService<UsuarioService>();
+    builder.AddServiceEndpoint<UsuarioService, IUsuarioService>(
+        new BasicHttpBinding(), "/UsuarioService");
 });
 
-
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
-
-

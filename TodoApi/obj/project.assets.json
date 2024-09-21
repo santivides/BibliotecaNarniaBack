@@ -6626,6 +6626,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "CoreWCF.Http >= 1.6.0",
+      "CoreWCF.Primitives >= 1.6.0",
       "CoreWCF.WebHttp >= 1.6.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
@@ -6680,6 +6681,10 @@
         "targetAlias": "net8.0",
         "dependencies": {
           "CoreWCF.Http": {
+            "target": "Package",
+            "version": "[1.6.0, )"
+          },
+          "CoreWCF.Primitives": {
             "target": "Package",
             "version": "[1.6.0, )"
           },

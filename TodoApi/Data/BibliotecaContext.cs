@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
 
 
-namespace TuNombreEspacio.Models
+namespace TodoApi.Models
 {
     public class BibliotecaContext : DbContext
     {

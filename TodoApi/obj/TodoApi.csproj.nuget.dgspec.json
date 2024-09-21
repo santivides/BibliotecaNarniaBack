@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[1.6.0, )"
             },
+            "CoreWCF.Primitives": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "CoreWCF.WebHttp": {
               "target": "Package",
               "version": "[1.6.0, )"

@@ -1,8 +1,13 @@
+using TodoApi.Models;
+using TodoApi.Repositories;
+
 namespace TodoApi.Interfaces
 {
-    public class IUsuarioService
+        public interface IUsuarioService
     {
-        //Task<string> AgregarUsuario(string Nombre, string Apellidos, string Correo, string TipoDocumento, string NumeroDocumento, string Contrasena, bool EsAdministrador);
-
+        Task<Usuario> ObtenerUsuarioPorNumeroDocumento(string numeroDocumento);
+        Task<Usuario> ObtenerUsuarioPorCorreo(string correo);
+        Task<IEnumerable<Usuario>> ObtenerTodosUsuarios();
+        Task RegistrarUsuario(Usuario usuario);
     }
 }
