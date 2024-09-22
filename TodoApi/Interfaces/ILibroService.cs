@@ -1,9 +1,26 @@
-namespace TodoApi.Services
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using CoreWCF;
+using TodoApi.Models;
+
+namespace TodoApi.Interfaces
 {
+    [ServiceContract]
     public interface ILibroService
     {
-        Task<string> AgregarLibro(string nombreLibro, string autor, string isbn, string fechaPublicacion, string descripcion, bool estado);
+        [OperationContract]
+        Task Agregar(Libro libro);
+        
+        [OperationContract]
+        Task Eliminar(int id);
 
-        Task<string> EliminarLibro(int id);
+        [OperationContract]
+        Task AlterarEstado(int id, bool estado);
+
+        [OperationContract]
+        Task<IEnumerable<Libro>> ObtenerTodosLibros();
+
+        [OperationContract]
+        Task<Libro?> ObtenerPorTitulo(string titulo);
     }
 }

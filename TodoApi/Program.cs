@@ -1,26 +1,26 @@
 using CoreWCF;
 using CoreWCF.Configuration;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using TodoApi.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using TodoApi.Models;
 using TodoApi.Repositories;
 using TodoApi.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar WCF en el proyecto
-builder.Services.AddServiceModelServices();
-
-// Configuración de la base de datos
-builder.Services.AddDbContext<TodoContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Configuración de la cadena de conexión
+var connectionString = "Driver={ODBC Driver 18 for SQL Server};Server=localhost;Database=BibliotecaNarnia;Trusted_Connection=True;";
 
 // Registrar servicios y repositorios
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioRepository>(provider => new UsuarioRepository(connectionString));
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
-// Configurar CoreWCF para servicios SOAP
+builder.Services.AddScoped<ILibroRepository>(provider => new LibroRepository(connectionString));
+builder.Services.AddScoped<ILibroService, LibroService>();
+
+
+// Configurar WCF en el proyecto
 builder.Services.AddServiceModelServices();
 
 // Agregar controladores
@@ -42,12 +42,12 @@ if (app.Environment.IsDevelopment())
 // Configuración del servicio WCF
 app.UseServiceModel(builder =>
 {
-    // Cambia WSHttpBinding a BasicHttpBinding
     builder.AddService<UsuarioService>();
-    builder.AddServiceEndpoint<UsuarioService, IUsuarioService>(
-        new BasicHttpBinding(), "/UsuarioService");
-});
+    builder.AddServiceEndpoint<UsuarioService, IUsuarioService>(new BasicHttpBinding(), "/UsuarioService");
 
+    builder.AddService<ILibroService>();
+    builder.AddServiceEndpoint<ILibroService, ILibroService>(new BasicHttpBinding(), "/LibroService");
+});
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

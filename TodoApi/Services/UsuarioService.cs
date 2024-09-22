@@ -12,12 +12,12 @@ public class UsuarioService : IUsuarioService
 
     public async Task<Usuario?> ObtenerUsuarioPorNumeroDocumento(string numeroDocumento)
     {
-        return await _usuarioRepository.ObtenerUsuarioPorNumeroDocumentoAsync(numeroDocumento);
+        return await _usuarioRepository.ObtenerUsuarioPorNumeroDocumento(numeroDocumento);
     }
 
     public async Task<Usuario?> ObtenerUsuarioPorCorreo(string correo)
     {
-        return await _usuarioRepository.ObtenerUsuarioPorCorreoAsync(correo);
+        return await _usuarioRepository.ObtenerUsuarioPorCorreo(correo);
     }
 
     public async Task<IEnumerable<Usuario>> ObtenerTodosUsuarios()
@@ -28,11 +28,6 @@ public class UsuarioService : IUsuarioService
     public async Task RegistrarUsuario(Usuario usuario)
     {
         await _usuarioRepository.Agregar(usuario);
-    }
-
-    Task<Usuario?> IUsuarioService.ObtenerUsuarioPorCorreo(string correo)
-    {
-        throw new NotImplementedException();
     }
 }
 
