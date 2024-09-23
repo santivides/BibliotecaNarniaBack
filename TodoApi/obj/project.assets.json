@@ -6635,27 +6635,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Santiago Vides\\.nuget\\packages\\": {}
+    "C:\\Users\\VALENTINA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Santiago Vides\\Documents\\universidad\\10mo-semestre\\Arquitectura\\presentacion1\\BibliotecaNarniaBack\\BibliotecaNarniaBack\\TodoApi\\TodoApi.csproj",
+      "projectUniqueName": "C:\\Users\\VALENTINA\\Documents\\arquitecturasoftware\\backNet\\BibliotecaNarniaBack\\TodoApi\\TodoApi.csproj",
       "projectName": "TodoApi",
-      "projectPath": "C:\\Users\\Santiago Vides\\Documents\\universidad\\10mo-semestre\\Arquitectura\\presentacion1\\BibliotecaNarniaBack\\BibliotecaNarniaBack\\TodoApi\\TodoApi.csproj",
-      "packagesPath": "C:\\Users\\Santiago Vides\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Santiago Vides\\Documents\\universidad\\10mo-semestre\\Arquitectura\\presentacion1\\BibliotecaNarniaBack\\BibliotecaNarniaBack\\TodoApi\\obj\\",
+      "projectPath": "C:\\Users\\VALENTINA\\Documents\\arquitecturasoftware\\backNet\\BibliotecaNarniaBack\\TodoApi\\TodoApi.csproj",
+      "packagesPath": "C:\\Users\\VALENTINA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VALENTINA\\Documents\\arquitecturasoftware\\backNet\\BibliotecaNarniaBack\\TodoApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Santiago Vides\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\VALENTINA\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
