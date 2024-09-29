@@ -1,0 +1,20 @@
+# Ignorar archivos binarios y compilados
+bin/
+obj/
+*.dll
+
+# Ignorar archivos temporales y lockfiles
+*.lock
+*.log
+
+# Ignorar carpetas de certificaciones
+certs/
+
+# Ignorar docker-compose si no deseas agregarlo
+docker-compose.yml
+
+# Ignorar carpetas específicas
+TodoApi/bin/Debug/net8.0/zh-Hans/
+TodoApi/bin/Debug/net8.0/zh-Hant/
+# Ignorar la carpeta de configuración de Visual Studio
+.vs/
